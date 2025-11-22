@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Parking Allotment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- Icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-3GQpH8x8uO+R6xgkQx7u6q8vJbZ5h6O0O4N2fVv8uC8r0XxJZb6d7t5TjYVh6JGs5p2UprRj6P4hQQGo4tVNMw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Loading animation -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Parking Allotment</div>
+  </div>
+
+  <!-- App container -->
+  <div class="app">
+    <!-- Sidebar navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <i class="fa-solid fa-square-parking"></i>
+        <span>Parking</span>
+      </div>
+      <nav>
+        <a href="#/" class="nav-link" data-route="/">
+          <i class="fa-solid fa-house"></i><span>Home</span>
+        </a>
+        <a href="#/dashboard" class="nav-link" data-route="/dashboard">
+          <i class="fa-solid fa-gauge"></i><span>Dashboard</span>
+        </a>
+        <a href="#/entry" class="nav-link" data-route="/entry">
+          <i class="fa-solid fa-car-side"></i><span>Vehicle Entry</span>
+        </a>
+        <a href="#/history" class="nav-link" data-route="/history">
+          <i class="fa-solid fa-clock-rotate-left"></i><span>History</span>
+        </a>
+        <a href="#/analytics" class="nav-link" data-route="/analytics">
+          <i class="fa-solid fa-chart-line"></i><span>Analytics</span>
+        </a>
+        <a href="#/contact" class="nav-link" data-route="/contact">
+          <i class="fa-solid fa-headset"></i><span>Support</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="resetDataBtn" class="btn btn-outline">Reset data</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+      <!-- Top navbar -->
+      <header class="topbar">
+        <div class="page-title">Home</div>
+        <div class="top-actions">
+          <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Router outlet -->
+      <section id="view"></section>
+    </main>
+  </div>
+
+  <!-- Toasts -->
+  <div id="toasts"></div>
+
+  <!-- Modals -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content glass">
+      <div class="modal-header">
+        <h3 id="modalTitle">Modal</h3>
+        <button class="icon-btn" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer" id="modalFooter">
+        <button class="btn btn-outline" id="modalCancel">Cancel</button>
+        <button class="btn btn-primary" id="modalConfirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Invoice popup -->
+  <div id="invoice" class="modal hidden">
+    <div class="modal-content glass">
+      <div class="modal-header">
+        <h3>Invoice</h3>
+        <button class="icon-btn" id="invoiceClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="invoiceBody"></div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="invoiceDownload">Download</button>
+        <button class="btn btn-primary" id="invoiceOk">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
