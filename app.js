@@ -1,4 +1,15 @@
-/* State and utilities */
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+  // Paste your keys here
+  const supabaseUrl = 'https://https://lsengjvwsgrdpqomkqol.supabase.co';
+  const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxzZW5nanZ3c2dyZHBxb21rcW9sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQyNDQ1MTcsImV4cCI6MjA3OTgyMDUxN30.o57d6d70WnYtIJqJCLeuPoCezeInByZbcya6qVvAQP0
+';
+
+  // Create client
+  const supabase = createClient(supabaseUrl, supabaseAnonKey);
+</script>
+  /* State and utilities */
 const STATE = {
   slots: [],        // {id, type, occupied, vehicle:{number, owner, type}, entryTime}
   history: [],      // {vehicleNumber, owner, type, slotId, entryTime, exitTime, durationMs, fee}
@@ -739,4 +750,5 @@ function basicLine(ctx, labels, values, color){
   // default route
   if (!location.hash) location.hash = '#/';
   navigate(currentPath());
+
 })();
