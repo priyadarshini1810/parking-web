@@ -1,5 +1,4 @@
-
-  /* State and utilities */
+ /* State and utilities */
 const STATE = {
   slots: [],        // {id, type, occupied, vehicle:{number, owner, type}, entryTime}
   history: [],      // {vehicleNumber, owner, type, slotId, entryTime, exitTime, durationMs, fee}
@@ -742,4 +741,5 @@ function basicLine(ctx, labels, values, color){
   navigate(currentPath());
 
 })();
+
 
